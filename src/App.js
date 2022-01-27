@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+// Exercice 3
+// Créez un dossier ReactJS qui s'appelle "exercice3".
+// Supprimez tous les dossiers inutiles.
+// Dans le fichier App.js, supprimez tous et créer une class App avec les extends et imports nécessaires.
+// Créez une variable qui a comme valeur la date actuelle, et affichez-la dans votre page (Affichez la date, le mois, l'année et l'heure actuelles)
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import React, {Component} from 'react';
+
+let date = new Date()
+let day = date.getDate()
+let month = date.getMonth()
+let year = date.getFullYear()
+let hour = date.getHours()
+
+class App extends Component {
+  render(){
+    return (
+      <p>Today it's {day}/{month+1}/{year} and it's {hour} o'clock</p>
+    );
+  }
 }
 
 export default App;
